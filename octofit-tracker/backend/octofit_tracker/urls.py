@@ -44,14 +44,12 @@ router.register(r'workouts', WorkoutViewSet)
 
 @api_view(['GET'])
 def api_root(request):
-    resolved_base_url = request.build_absolute_uri('/').rstrip('/')
     return Response({
-        'users': f'{resolved_base_url}/api/users/',
-        'teams': f'{resolved_base_url}/api/teams/',
-        'activities': f'{resolved_base_url}/api/activities/',
-        'leaderboard': f'{resolved_base_url}/api/leaderboard/',
-        'workouts': f'{resolved_base_url}/api/workouts/',
-        'default_base_url': base_url,
+        'users': f'{base_url}/api/users/',
+        'teams': f'{base_url}/api/teams/',
+        'activities': f'{base_url}/api/activities/',
+        'leaderboard': f'{base_url}/api/leaderboard/',
+        'workouts': f'{base_url}/api/workouts/',
     })
 
 urlpatterns = [
